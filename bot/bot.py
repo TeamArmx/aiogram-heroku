@@ -10,7 +10,6 @@ from bot.settings import (BOT_TOKEN, HEROKU_APP_NAME,
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from aiogram.types.web_app_info import WebAppInfo
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.types import callback_query
 import requests,user_agent,json,os,sys,secrets,names,urllib
@@ -20,6 +19,7 @@ from time import sleep
 from user_agent import generate_user_agent
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
+storage = MemoryStorage()
 dp.middleware.setup(LoggingMiddleware())
 
 
@@ -343,11 +343,11 @@ async def random(call: types.CallbackQuery):
 					E = InlineKeyboardButton(text=f"DevLoper", url='https://t.me/ONCLIK')
 					erorr = InlineKeyboardMarkup(1).add(A, B, C, O, D, E) 
 					await bot.edit_message_caption(chat_id=call.message.chat.id, message_id=call.message.message_id, caption='Consol dev By Mohammed Almuswi',reply_markup=erorr)
-	elif call.data == "games":
-		await bot.edit_message_caption(chat_id=call.message.chat.id, message_id=call.message.message_id, caption='click play button',reply_markup=InlineKeyboardMarkup(2).add(InlineKeyboardButton(text='play',web_app=WebAppInfo(url='https://poki.com/ar')),InlineKeyboardButton(text="BACK", callback_data="back"),InlineKeyboardButton(text=f"DevLoper", url='https://t.me/ONCLIK')))
+	#elif call.data == "games":
+		#await bot.edit_message_caption(chat_id=call.message.chat.id, message_id=call.message.message_id, caption='click play button',reply_markup=InlineKeyboardMarkup(2).add(InlineKeyboardButton(text='play',web_app=WebAppInfo(url='https://poki.com/ar')),InlineKeyboardButton(text="BACK", callback_data="back"),InlineKeyboardButton(text=f"DevLoper", url='https://t.me/ONCLIK')))
 		
-	elif call.data == "youtube":
-		await bot.edit_message_caption(chat_id=call.message.chat.id, message_id=call.message.message_id, caption='click YouTube button',reply_markup=InlineKeyboardMarkup().add(InlineKeyboardButton(text='YouTube',web_app=WebAppInfo(url='https://www.youtube.com/'))))
+	#elif call.data == "youtube":
+		#await bot.edit_message_caption(chat_id=call.message.chat.id, message_id=call.message.message_id, caption='click YouTube button',reply_markup=InlineKeyboardMarkup().add(InlineKeyboardButton(text='YouTube',web_app=WebAppInfo(url='https://www.youtube.com/'))))
 		#await bot.edit_message_caption(chat_id=call.message.chat.id, message_id=call.message.message_id, caption="replace ", reply_markup=ky1)
 
 async def on_startup(dp):
