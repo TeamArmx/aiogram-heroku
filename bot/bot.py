@@ -146,14 +146,9 @@ async def process_start_command(message: types.Message):
 			await message.reply(Msge,parse_mode="markdown")
 	elif "/bin" in message.text:
 		try:
-						frt = message.chat.first_name
-						file = str(message.chat.id)+".txt"
-						b = message.text.replace('/bin ','')
-						with open(file, "a") as af:
-							af.write(b)
-						afi = open(file,"r").read().splitlines()
-						for Bin in afi:
-							Bin = Bin.split('\n')[0]
+							frt = message.chat.first_name
+							b = message.text.replace('/bin ','')
+							Bin = b
 							u1=requests.get(f"https://api.dlyar-dev.tk/info-bin?bin={Bin}").json()
 							bin = u1['bin']
 							sc = u1['scheme']
@@ -167,32 +162,26 @@ async def process_start_command(message: types.Message):
 							ph = u1['phone']
 							msg = (f'𝗩𝗔𝗟𝗜𝗗 𝗕𝗜𝗡 ✅\n𝗕𝗜𝗡 ⇾ `{bin}`\n\n𝗕𝗜𝗡 𝗜𝗻𝗳𝗼: `{sc} - {ty} - {br} - {ph}` \n𝗕𝗮𝗻𝗸: `{crr} - {ba}` \n𝗖𝗼𝘂𝗻𝘁𝗿𝘆: `{co} - {cu} - {fl}` \n𝗖𝗛𝗘𝗖𝗞 𝗕𝗬 : {frt}')
 							await message.reply(msg,parse_mode="markdown")
-						os.system("rm -rf "+str(file))
 		except:
-						await message.reply('Unavailable bin ❌')
+							await message.reply('Unavailable bin ❌')
 	elif "/chk" in message.text:
 						frt = message.chat.first_name
-						file = str(message.chat.id)+".txt"
 						b = message.text.replace('/chk ','')
-						with open(file, "a") as af:
-							af.write(b)
-						afi = open(file,"r").read().splitlines()
-						for Bin in afi:
-							card = Bin.split('\n')[0]
-							cc = card.split('|')[0]
-							u1=requests.get(f"https://api.dlyar-dev.tk/info-bin?bin={cc}").json()
-							bin = u1['bin']
-							sc = u1['scheme']
-							ty = u1['type']
-							br = u1['brand']
-							ba = u1['bank']
-							co = u1['ccode']
-							cu = u1['country']
-							crr = u1['currency']
-							fl = u1['flag']
-							ph = u1['phone']
-							url = requests.get(f'https://www.xchecker.cc/api.php?cc={card}').json()
-							if url['details']=="Charge OK." and url['status']=="Live":
+						card = b
+						cc = card.split('|')[0]
+						u1=requests.get(f"https://api.dlyar-dev.tk/info-bin?bin={cc}").json()
+						bin = u1['bin']
+						sc = u1['scheme']
+						ty = u1['type']
+						br = u1['brand']
+						ba = u1['bank']
+						co = u1['ccode']
+						cu = u1['country']
+						crr = u1['currency']
+						fl = u1['flag']
+						ph = u1['phone']
+						url = requests.get(f'https://www.xchecker.cc/api.php?cc={card}').json()
+						if url['details']=="Charge OK." and url['status']=="Live":
 								msg = (f'''
 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
 
@@ -206,7 +195,7 @@ async def process_start_command(message: types.Message):
 
 𝗖𝗛𝗘𝗖𝗞 𝗕𝗬 : {frt}''')
 								await message.reply(msg,parse_mode="markdown")
-							elif url['details']=="Your card was declined." and url['status']=="Dead":
+						elif url['details']=="Your card was declined." and url['status']=="Dead":
 								msg = (f'''
 𝗗𝗲𝗰𝗹𝗶𝗻𝗲𝗱 ❌
 
@@ -220,9 +209,8 @@ async def process_start_command(message: types.Message):
 
 𝗖𝗛𝗘𝗖𝗞 𝗕𝗬 : {frt}''')
 								await message.reply(msg,parse_mode="markdown")
-							else:
+						else:
 								await message.reply('BLACKLISTED_BIN: This BIN is blacklisted.')
-							os.system("rm -rf "+str(file))
 	elif message.text == "/start":
 		logo = 'https://t.me/{}'.format(message.chat.username)
 		await message.reply_photo(logo,caption=("""
