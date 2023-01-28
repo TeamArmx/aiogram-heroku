@@ -1,5 +1,16 @@
 ''' Run a function by ado <func_name> '''
 
+from aiogram import Bot, Dispatcher, executor, types
+from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types.web_app_info import WebAppInfo
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.types import callback_query
+import requests,user_agent,json,os,sys,secrets,names,urllib
+import random, datetime
+from faker import Faker 
+from time import sleep
+from user_agent import generate_user_agent
 
 def set_hook():
     import asyncio
