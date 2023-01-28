@@ -71,34 +71,6 @@ async def process_start_command(message: types.Message):
 					msge =(f'`🦍 INFO ᴵᴺˁᵀᴬᴳᴿᴬᴹ ᴮʸ ᴹᴼᴴᴬᴹᴹᴱᴰ ᴬᴸᴹᵁˁᵂᴵ⌯\n• ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ •\n🚹 ɴᴀᴍᴇ » {name}\n💡 ᴜsᴇʀɴᴀᴍᴇ » {username}\n🚻 ғᴏʟʟᴏᴡᴇʀs » {followers}\n🚸 ғᴏʟʟᴏᴡɪɴɢ » {following}\n📆 ᴅᴀᴛᴇ » {date}\n🗿 ɪᴅ » {id}\n📫 ᴘᴏsᴛs » {post}\n🗳️ ᴘʀɪvᴀᴛᴇ » {isp}\n📥 verified » {ver}\n📈 ʙɪᴏ » {bio}\n📽️ ʙɪᴏ LINK » {bio_link}\n📊 𝙻𝙸𝙽𝚔 » https://www.instagram.com/{user}\n• ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ •\n`')
 					#bot.send_photo(me.chat.id,img,caption=msge,parse_mode = "markdown")
 					await message.reply_photo(img,caption=msge,parse_mode="markdown")
-					#await message.reply_video("https://scontent.cdninstagram.com/v/t66.30100-16/10000000_186386910715019_3997630578055552074_n.mp4?_nc_ht=instagram.fnjf8-2.fna.fbcdn.net&_nc_cat=111&_nc_ohc=DelwVbsK0iYAX_Aiwpb&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCaEGUAQ__0b1Zo4klT4-CAxxxmhX8hmoCc616mJzEVAA&oe=63A28C2C&_nc_sid=8fd12b",caption="09")
-					video = info['edge_owner_to_timeline_media']['edges']
-					count = 0
-					felix = 0
-					text = 0
-					while True:
-						if 'video_url' in str(video[count]['node']):
-							down = video[count]['node']['video_url']
-							if 'text' in str(video[count]['node']['edge_media_to_caption']['edges'][0]):
-								captionn = video[count]['node']['edge_media_to_caption']['edges'][text]['node']['text']
-								await message.reply_video(down,caption=f"{captionn}")
-								count+=1
-							else:
-								await message.reply_video(down,caption="*DOWNLOAD BY MOHAMMED ALMUSWI*",parse_mode="markdown")
-								count+=1
-						elif 'thumbnail_src' in str(video[count]['node']):
-							down = video[count]['node']['thumbnail_src']
-							if 'text' in str(video[count]['node']['edge_media_to_caption']['edges']):
-								caption = video[count]['node']['edge_media_to_caption']['edges'][text]['node']['text']
-								await message.reply_photo(down,caption=f"{caption}\nDOWNLOAD BY MOHAMMED ALMUSWI")
-								count+=1
-							else:
-								await message.reply_photo(down,caption="*DOWNLOAD BY MOHAMMED ALMUSWI*",parse_mode="markdown")
-								count+=1
-						elif 'edge_felix_video_timeline' in info:
-							infoo = info['edge_felix_video_timeline']['edges'][felix]['node']['video_url']
-							await message.reply_video(infoo,caption="\n*DOWNLOAD BY MOHAMMED ALMUSWI*",parse_mode="markdown")
-							felix+=1
 	elif "/ip" in message.text:
 		ip = message.text.replace('/ip ','')
 		re = requests.get('https://ipinfo.io/widget/demo/{}'.format(ip),headers={'Host':'ipinfo.io','sec-ch-ua':'"Chromium";v="107", "Not=A?Brand";v="24"','sec-ch-ua-platform':'"Android"','sec-ch-ua-mobile':'?1','user-agent':'Mozilla/5.0 (Linux; Android 10; YAL-L21) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36','content-type':'application/json','accept':'*/*','sec-fetch-site':'same-origin','sec-fetch-mode':'cors','sec-fetch-dest':'empty','referer':'https://ipinfo.io/?ip=151.236.167.108','accept-encoding':'gzip, deflate, br','accept-language':'en-IQ,en;q=0.9,ar-IQ;q=0.8,ar;q=0.7,en-GB;q=0.6,en-US;q=0.5'})
