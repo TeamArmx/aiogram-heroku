@@ -1,8 +1,8 @@
 # webhook-aiogram-heroku
 
-[![Generic badge](https://img.shields.io/badge/works-yes-<COLOR>.svg)](https://MohammedNajih.github.io)
-[![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://MohammedNajih.github.io/)
-[![telegram-chat](https://img.shields.io/badge/chat-@aahnikdaw-blue?logo=telegram)](https://telegram.me/onclik)
+[![Generic badge](https://img.shields.io/badge/works-yes-<COLOR>.svg)](https://github.com/MohammedNajih)
+[![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://github.com/MohammedNajih)
+[![telegram-chat](https://img.shields.io/badge/Chenall-@onclik-blue?logo=telegram)](https://telegram.me/onclik)
 
 A simple telegram echo bot made with [`aiogram`](https://github.com/MohammedNajih/aiogram-heroku/), that fetches updates using web-hook connection.
 
