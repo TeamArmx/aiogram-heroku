@@ -7,6 +7,12 @@ from aiogram.utils.executor import start_webhook
 from bot.settings import (BOT_TOKEN, HEROKU_APP_NAME,
                           WEBHOOK_URL, WEBHOOK_PATH,
                           WEBAPP_HOST, WEBAPP_PORT)
+from aiogram import Bot, Dispatcher, executor, types
+from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types.web_app_info import WebAppInfo
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from aiogram.types import callback_query
 import requests,user_agent,json,os,sys,secrets,names,urllib
 import random, datetime
 from faker import Faker 
