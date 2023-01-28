@@ -1,10 +1,10 @@
 # webhook-aiogram-heroku
 
-[![Generic badge](https://img.shields.io/badge/works-yes-<COLOR>.svg)](https://aahnik.github.io)
-[![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://aahnik.github.io/)
-[![telegram-chat](https://img.shields.io/badge/chat-@aahnikdaw-blue?logo=telegram)](https://telegram.me/aahnikdaw)
+[![Generic badge](https://img.shields.io/badge/works-yes-<COLOR>.svg)](https://MohammedNajih.github.io)
+[![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://MohammedNajih.github.io/)
+[![telegram-chat](https://img.shields.io/badge/chat-@aahnikdaw-blue?logo=telegram)](https://telegram.me/onclik)
 
-A simple telegram echo bot made with [`aiogram`](https://github.com/aiogram/aiogram), that fetches updates using web-hook connection.
+A simple telegram echo bot made with [`aiogram`](https://github.com/MohammedNajih/aiogram-heroku/), that fetches updates using web-hook connection.
 
 ## Deploy
 
@@ -15,7 +15,7 @@ The following steps assume that you have Heroku CLI installed in your system.
 1. Clone the repo and move into the project directory.
 
 ```shell
-git clone https://github.com/aahnik/webhook-aiogram-heroku.git
+git clone https://github.com/MohammedNajih/aiogram-heroku.git
 cd webhook-aiogram-heroku
 ```
 
@@ -55,4 +55,5 @@ To confirm your bot is working:
 - Run `heroku ps` which will show you details of your dyno.
 
 - Send a message to your bot, and your bot will echo it back to you.
+-Dev By Mohammed Almuswi 
 
