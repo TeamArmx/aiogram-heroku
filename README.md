@@ -1,4 +1,4 @@
-# webhook-aiogram-heroku
+# aiogram-heroku
 
 [![Generic badge](https://img.shields.io/badge/works-yes-<COLOR>.svg)](https://github.com/MohammedNajih)
 [![ MIT license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://github.com/MohammedNajih)
@@ -16,7 +16,7 @@ The following steps assume that you have Heroku CLI installed in your system.
 
 ```shell
 git clone https://github.com/MohammedNajih/aiogram-heroku.git
-cd webhook-aiogram-heroku
+cd aiogram-heroku
 ```
 
 2. Create a new Heroku app.
